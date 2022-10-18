@@ -5,20 +5,28 @@ import {loadGraphModel} from '@tensorflow/tfjs-converter';
 import "./styles.css";
 tf.setBackend('webgl');
 
-const threshold = 0.2;
+const threshold = 0.35;
 
 async function load_model() {
     // It's possible to load the model locally or from a repo
     // You can choose whatever IP and PORT you want in the "http://127.0.0.1:8080/model.json" just set it before in your https server
     //const model = await loadGraphModel("http://127.0.0.1:8080/model.json");
-    const model = await loadGraphModel("https://raw.githubusercontent.com/ultramenlev1/tolonglahaku/main/models/fire/model.json");
+    const model = await loadGraphModel("https://raw.githubusercontent.com/ultramenlev1/ingboo/main/models/fire/model.json");
     return model;
   }
 
 let classesDir = {
     1: {
-        name: 'fire',
-        id: 1
+        name: 'Major',
+        id: 1,
+    }
+    2: {
+        name: 'Minor',
+        id: 2,
+    }
+    3: {
+        name: 'Major',
+        id: 3,
     }
 }
 
